@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compress your images online with our fully responsive image compression tool. Optimize images by selecting the desired compression level in KB/MB.">
-    <meta name="keywords" content="image compression, compress images, optimize images, image optimizer, online image compressor">
-    <meta name="author" content="kanhaiyamishra">
-    <title>Online Image Compression Tool</title>
+    <meta name="description" content="Your ultimate destination for image and PDF tools. Compress, convert, resize, merge, and more with our easy-to-use online tools.">
+    <meta name="keywords" content="image tools, PDF tools, compress images, convert PDF, merge PDF, online tools">
+    <meta name="author" content="Your Name">
+    <title>Image & PDF Tools - Online Tools</title>
     <style>
         /* CSS Reset */
         * {
@@ -26,7 +26,7 @@
         header {
             background-color: #4CAF50;
             color: white;
-            padding: 20px 0;
+            padding: 40px 20px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -34,127 +34,200 @@
         header h1 {
             font-size: 2.5rem;
             font-weight: 600;
+            margin-bottom: 10px;
         }
 
-        /* Top Advertisement Section */
-        #top-advertisement {
-            background: white;
-            padding: 15px;
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #333;
+            padding: 10px;
             text-align: center;
-            border-bottom: 1px solid #ddd;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
         }
 
         /* Main Content */
         main {
             padding: 20px;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* Compression Tool Section */
-        #compression-tool {
+        /* Tool Categories */
+        .tool-category {
+            margin-bottom: 40px;
+        }
+
+        .tool-category h2 {
+            font-size: 2rem;
+            color: #4CAF50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .tool-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .tool-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
+        .tool-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .tool-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .tool-card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .tool-card a:hover {
+            background-color: #45a049;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Compressor Tool Page */
+        #compressor-tool {
+            display: none; /* Hidden by default */
             background: white;
             padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             margin-bottom: 20px;
         }
 
-        #compression-tool h2 {
+        #compressor-tool h2 {
             font-size: 1.8rem;
             margin-bottom: 20px;
             color: #4CAF50;
         }
 
-        form {
+        #compressor-tool form {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
 
-        label {
+        #compressor-tool label {
             font-weight: 600;
             color: #555;
         }
 
-        input[type="file"], input[type="text"] {
+        #compressor-tool input[type="file"], #compressor-tool input[type="text"] {
             padding: 10px;
             border: 2px solid #ddd;
-            border-radius: 5px;
+            border-radius: 25px;
             font-size: 1rem;
             transition: border-color 0.3s ease;
         }
 
-        input[type="file"]:focus, input[type="text"]:focus {
+        #compressor-tool input[type="file"]:focus, #compressor-tool input[type="text"]:focus {
             border-color: #4CAF50;
             outline: none;
         }
 
-        button {
+        #compressor-tool button {
             padding: 12px;
             background-color: #4CAF50;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 25px;
             font-size: 1rem;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
 
-        button:hover {
+        #compressor-tool button:hover {
             background-color: #45a049;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
         }
 
-        /* Output Section */
-        #output {
+        #compressor-tool #output {
             margin-top: 20px;
             text-align: center;
             display: none; /* Hidden by default */
         }
 
-        #compressed-image {
+        #compressor-tool #compressed-image {
             max-width: 100%;
             height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             margin-top: 15px;
         }
 
-        #download-link {
+        #compressor-tool #download-link {
             display: inline-block;
             margin-top: 15px;
             padding: 10px 20px;
             background-color: #4CAF50;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
 
-        #download-link:hover {
+        #compressor-tool #download-link:hover {
             background-color: #45a049;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
         }
 
-        /* User Feedback */
-        #user-feedback {
+        #compressor-tool #user-feedback {
             margin-top: 10px;
             font-size: 0.9rem;
-            color: #555;
-        }
-
-        /* Bottom Advertisement Section */
-        #bottom-advertisement {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        #bottom-advertisement h2 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
             color: #555;
         }
 
@@ -163,11 +236,8 @@
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 15px 0;
-            margin-top: 20px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            padding: 20px 0;
+            margin-top: 40px;
         }
 
         footer p {
@@ -181,12 +251,21 @@
                 font-size: 2rem;
             }
 
-            #compression-tool h2 {
-                font-size: 1.5rem;
+            header p {
+                font-size: 1rem;
             }
 
-            main {
-                padding: 15px;
+            nav a {
+                font-size: 1rem;
+                margin: 0 10px;
+            }
+
+            .tool-category h2 {
+                font-size: 1.8rem;
+            }
+
+            .tool-card h3 {
+                font-size: 1.3rem;
             }
         }
 
@@ -195,41 +274,83 @@
                 font-size: 1.8rem;
             }
 
-            #compression-tool h2 {
-                font-size: 1.3rem;
+            header p {
+                font-size: 0.9rem;
             }
 
-            input[type="file"], input[type="text"], button {
+            nav a {
                 font-size: 0.9rem;
+                margin: 0 8px;
+            }
+
+            .tool-category h2 {
+                font-size: 1.5rem;
+            }
+
+            .tool-card h3 {
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Online Image Compression Tool</h1>
+        <h1>Image & PDF Tools</h1>
+        <p>Your ultimate destination for all image and PDF tools. Compress, convert, resize, merge, and more!</p>
     </header>
 
-    <!-- Top Advertisement Section -->
-    <section id="top-advertisement">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_UNIT_ID"
-                crossorigin="anonymous"></script>
-        <!-- Ad Unit -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-YOUR_AD_UNIT_ID"
-             data-ad-slot="1234567890"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </section>
+    <!-- Navigation -->
+    <nav>
+        <a href="#home" onclick="showHomepage()">Home</a>
+        <a href="#image-tools" onclick="showHomepage()">Image Tools</a>
+        <a href="#pdf-tools" onclick="showHomepage()">PDF Tools</a>
+    </nav>
 
     <main>
-        <!-- Image Compression Tool -->
-        <section id="compression-tool">
-            <h2>Compress Your Images</h2>
+        <!-- Homepage Content -->
+        <div id="homepage">
+            <!-- Image Tools Section -->
+            <section id="image-tools" class="tool-category">
+                <h2>Image Tools</h2>
+                <div class="tool-grid">
+                    <div class="tool-card">
+                        <img src="https://via.placeholder.com/60" alt="Image Compressor">
+                        <h3>Image Compressor</h3>
+                        <p>Compress images without losing quality.</p>
+                        <a href="#compressor-tool" onclick="showCompressorTool()">Use Tool</a>
+                    </div>
+                    <div class="tool-card">
+                        <img src="https://via.placeholder.com/60" alt="Image Converter">
+                        <h3>Image Converter</h3>
+                        <p>Convert images to JPG, PNG, WEBP, and more.</p>
+                        <a href="#">Use Tool</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PDF Tools Section -->
+            <section id="pdf-tools" class="tool-category">
+                <h2>PDF Tools</h2>
+                <div class="tool-grid">
+                    <div class="tool-card">
+                        <img src="https://via.placeholder.com/60" alt="PDF Compressor">
+                        <h3>PDF Compressor</h3>
+                        <p>Compress PDF files to reduce their size.</p>
+                        <a href="#">Use Tool</a>
+                    </div>
+                    <div class="tool-card">
+                        <img src="https://via.placeholder.com/60" alt="PDF to Word">
+                        <h3>PDF to Word</h3>
+                        <p>Convert PDF files to editable Word documents.</p>
+                        <a href="#">Use Tool</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Compressor Tool Page -->
+        <div id="compressor-tool">
+            <h2>Image Compressor</h2>
             <form id="compress-form">
                 <label for="image-input">Select Image:</label>
                 <input type="file" id="image-input" accept="image/*" required>
@@ -240,42 +361,33 @@
                 <button type="submit">Compress Image</button>
             </form>
 
-            <!-- User Feedback -->
-            <div id="user-feedback"></div>
-
-            <!-- Output Section -->
             <div id="output">
                 <h3>Compressed Image:</h3>
                 <img id="compressed-image" src="" alt="Compressed Image">
                 <a id="download-link" href="#" download>Download Compressed Image</a>
             </div>
-        </section>
-
-        <!-- Bottom Advertisement Section -->
-        <section id="bottom-advertisement">
-            <h2>Advertisement</h2>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_UNIT_ID"
-                    crossorigin="anonymous"></script>
-            <!-- Ad Unit -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-YOUR_AD_UNIT_ID"
-                 data-ad-slot="1234567890"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </section>
+            <div id="user-feedback"></div>
+        </div>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2023 Online Image Compression Tool. All rights reserved.</p>
+        <p>&copy; 2023 Image & PDF Tools. All rights reserved.</p>
     </footer>
 
     <script>
         // JavaScript Functionality
-        document.getElementById('compress-form').addEventListener('submit', function(event) {
+        function showHomepage() {
+            document.getElementById('homepage').style.display = 'block';
+            document.getElementById('compressor-tool').style.display = 'none';
+        }
+
+        function showCompressorTool() {
+            document.getElementById('homepage').style.display = 'none';
+            document.getElementById('compressor-tool').style.display = 'block';
+        }
+
+        document.getElementById('compress-form').addEventListener('submit', async function(event) {
             event.preventDefault();
             
             const fileInput = document.getElementById('image-input');
@@ -284,62 +396,103 @@
             const downloadLink = document.getElementById('download-link');
             const outputSection = document.getElementById('output');
             const userFeedback = document.getElementById('user-feedback');
-            
-            if (fileInput.files.length === 0) {
-                alert('Please select an image to compress.');
-                return;
-            }
 
-            // Parse compression level
-            let compressionLevel = parseFloat(compressionLevelInput);
-            if (isNaN(compressionLevel)) {
-                alert('Please enter a valid number for compression level.');
-                return;
-            }
+            // Reset UI
+            outputSection.style.display = 'none';
+            userFeedback.textContent = 'Compressing...';
 
-            // Determine unit (default to KB if not specified)
-            let unit = 'KB';
+            // Parse target size
+            let targetSizeKB = parseFloat(compressionLevelInput);
             if (compressionLevelInput.toLowerCase().includes('mb')) {
-                unit = 'MB';
-            } else if (!compressionLevelInput.toLowerCase().includes('kb')) {
-                // If no unit is specified, default to KB and inform the user
-                userFeedback.textContent = `No unit specified. Assuming ${compressionLevel} KB.`;
+                targetSizeKB *= 1024; // Convert MB to KB
             }
+            const targetSizeBytes = (targetSizeKB - 0.1) * 1024; // Target size - 0.1KB
 
-            // Convert MB to KB if necessary
-            if (unit === 'MB') {
-                compressionLevel = compressionLevel * 1024; // 1 MB = 1024 KB
+            if (fileInput.files.length === 0 || isNaN(targetSizeKB)) {
+                alert('Invalid input');
+                return;
             }
 
             const file = fileInput.files[0];
-            const reader = new FileReader();
+            
+            // Load image once
+            const img = await loadImage(file);
+            const canvas = createCanvas(img);
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0);
 
-            reader.onload = function(e) {
-                const img = new Image();
-                img.src = e.target.result;
+            // Check minimum possible size
+            const minQuality = 0.1; // Minimum quality (10%)
+            const minSizeBlob = await compressImage(canvas, minQuality);
+            const minSizeKB = minSizeBlob.size / 1024;
 
-                img.onload = function() {
-                    const canvas = document.createElement('canvas');
-                    const ctx = canvas.getContext('2d');
-                    canvas.width = img.width;
-                    canvas.height = img.height;
-                    ctx.drawImage(img, 0, 0);
+            if (targetSizeKB - 0.1 < minSizeKB) {
+                // If target size is smaller than minimum possible size
+                userFeedback.textContent = `Cannot compress below ${minSizeKB.toFixed(2)}KB. Minimum possible size is ${minSizeKB.toFixed(2)}KB.`;
+                outputSection.style.display = 'block';
+                return;
+            }
 
-                    // Calculate quality (KB to MB ratio)
-                    const quality = compressionLevel / 1024; // Convert KB to MB
+            // Binary search for optimal quality
+            let low = 0.1; // Minimum quality
+            let high = 1.0; // Maximum quality
+            let quality = 0.7; // Starting quality
+            let blob = await compressImage(canvas, quality);
+            let iterations = 0;
 
-                    canvas.toBlob(function(blob) {
-                        const compressedImageUrl = URL.createObjectURL(blob);
-                        outputImage.src = compressedImageUrl;
-                        downloadLink.href = compressedImageUrl;
-                        downloadLink.download = `compressed_${file.name}`;
-                        outputSection.style.display = 'block'; // Show output section
-                    }, 'image/jpeg', quality);
-                };
-            };
+            while (iterations < 20) { // Max 20 iterations
+                const currentSizeKB = blob.size / 1024;
+                
+                if (Math.abs(currentSizeKB - (targetSizeKB - 0.1)) < 0.05) { // ±0.05KB tolerance
+                    break;
+                }
 
-            reader.readAsDataURL(file);
+                // Adjust quality using binary search
+                if (currentSizeKB > (targetSizeKB - 0.1)) {
+                    high = quality; // Reduce quality
+                } else {
+                    low = quality; // Increase quality
+                }
+                quality = (low + high) / 2;
+
+                blob = await compressImage(canvas, quality);
+                iterations++;
+            }
+
+            // Final result
+            const compressedImageUrl = URL.createObjectURL(blob);
+            outputImage.src = compressedImageUrl;
+            downloadLink.href = compressedImageUrl;
+            downloadLink.download = `compressed_${file.name}`;
+            outputSection.style.display = 'block';
+            userFeedback.textContent = `Final size: ${(blob.size/1024).toFixed(2)}KB (Target: ${targetSizeKB}KB)`;
         });
+
+        // Helper functions
+        function loadImage(file) {
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const img = new Image();
+                    img.src = e.target.result;
+                    img.onload = () => resolve(img);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function createCanvas(img) {
+            const canvas = document.createElement('canvas');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            return canvas;
+        }
+
+        function compressImage(canvas, quality) {
+            return new Promise((resolve) => {
+                canvas.toBlob((blob) => resolve(blob), 'image/jpeg', quality);
+            });
+        }
     </script>
 </body>
 </html>
