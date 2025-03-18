@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compress your images online with our fully responsive image compression tool. Optimize images by selecting the desired compression level in KB/MB.">
+    <meta name="keywords" content="image compression, compress images, optimize images, image optimizer, online image compressor">
+    <meta name="author" content="Your Name">
+    <title>Online Image Compression Tool</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Compression Tool Section */
+        #compression-tool {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        #compression-tool h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        input[type="file"], input[type="text"] {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="file"]:focus, input[type="text"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Output Section */
+        #output {
+            margin-top: 20px;
+            text-align: center;
+            display: none; /* Hidden by default */
+        }
+
+        #compressed-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 15px;
+        }
+
+        #download-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #download-link:hover {
+            background-color: #45a049;
+        }
+
+        /* User Feedback */
+        #user-feedback {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Advertisement Section */
+        #advertisement {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #advertisement h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            #compression-tool h2 {
+                font-size: 1.5rem;
+            }
+
+            main {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            #compression-tool h2 {
+                font-size: 1.3rem;
+            }
+
+            input[type="file"], input[type="text"], button {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Online Image Compression Tool</h1>
+    </header>
+
+    <main>
+        <!-- Image Compression Tool -->
+        <section id="compression-tool">
+            <h2>Compress Your Images</h2>
+            <form id="compress-form">
+                <label for="image-input">Select Image:</label>
+                <input type="file" id="image-input" accept="image/*" required>
+                
+                <label for="compression-level">Compression Level (KB/MB):</label>
+                <input type="text" id="compression-level" placeholder="e.g., 100KB, 1MB" required>
+                
+                <button type="submit">Compress Image</button>
+            </form>
+
+            <!-- User Feedback -->
+            <div id="user-feedback"></div>
+
+            <!-- Output Section -->
+            <div id="output">
+                <h3>Compressed Image:</h3>
+                <img id="compressed-image" src="" alt="Compressed Image">
+                <a id="download-link" href="#" download>Download Compressed Image</a>
+            </div>
+        </section>
+
+        <!-- Advertisement Section -->
+        <section id="advertisement">
+            <h2>Advertisement</h2>
+            <!-- Google AdSense Ad Unit -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_UNIT_ID"
+                    crossorigin="anonymous"></script>
+            <!-- Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_AD_UNIT_ID"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Online Image Compression Tool. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript Functionality
+        document.getElementById('compress-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const fileInput = document.getElementById('image-input');
+            const compressionLevelInput = document.getElementById('compression-level').value.trim();
+            const outputImage = document.getElementById('compressed-image');
+            const downloadLink = document.getElementById('download-link');
+            const outputSection = document.getElementById('output');
+            const userFeedback = document.getElementById('user-feedback');
+            
+            if (fileInput.files.length === 0) {
+                alert('Please select an image to compress.');
+                return;
+            }
+
+            // Parse compression level
+            let compressionLevel = parseFloat(compressionLevelInput);
+            if (isNaN(compressionLevel)) {
+                alert('Please enter a valid number for compression level.');
+                return;
+            }
+
+            // Determine unit (default to KB if not specified)
+            let unit = 'KB';
+            if (compressionLevelInput.toLowerCase().includes('mb')) {
+                unit = 'MB';
+            } else if (!compressionLevelInput.toLowerCase().includes('kb')) {
+                // If no unit is specified, default to KB and inform the user
+                userFeedback.textContent = `No unit specified. Assuming ${compressionLevel} KB.`;
+            }
+
+            // Convert MB to KB if necessary
+            if (unit === 'MB') {
+                compressionLevel = compressionLevel * 1024; // 1 MB = 1024 KB
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const img = new Image();
+                img.src = e.target.result;
+
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    ctx.drawImage(img, 0, 0);
+
+                    // Calculate quality (KB to MB ratio)
+                    const quality = compressionLevel / 1024; // Convert KB to MB
+
+                    canvas.toBlob(function(blob) {
+                        const compressedImageUrl = URL.createObjectURL(blob);
+                        outputImage.src = compressedImageUrl;
+                        downloadLink.href = compressedImageUrl;
+                        downloadLink.download = `compressed_${file.name}`;
+                        outputSection.style.display = 'block'; // Show output section
+                    }, 'image/jpeg', quality);
+                };
+            };
+
+            reader.readAsDataURL(file);
+        });
+    </script>
+</body>
+</html>
